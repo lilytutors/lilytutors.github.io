@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Confirmation
+	</title>
+
+	<script>
+        // Extract the message from the query parameter
+        function getMessageFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return decodeURIComponent(params.get('message'));
+        }
+
+        // Display the message on page load
+        window.addEventListener('load', function() {
+            const message = getMessageFromURL();
+            document.getElementById('message').textContent = message;
+        });
+    </script>
+
+</head>
+
+<body>
+    <p>Your message has been received!</p>
+
+	<!-- Show client's input -->
+
+	<p id="message"></p>
+
+	<p>Thank you for reaching out, and I look forward to connecting soon!</p>
+
+    <p>Click <a href="./index.html">here</a> to return to the home page.</p>
+
+</body>
+
+</html>
